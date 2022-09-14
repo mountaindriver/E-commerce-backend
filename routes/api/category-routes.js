@@ -2,10 +2,7 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
-
 router.get('/', async (req, res) => {
-  console.log("hi");
-
   try { 
     const categoryData = await Category.findAll({
       include: [{ model: Product }],
@@ -59,7 +56,7 @@ router.put('/:id', async (req, res, next) => {
 });
 
 
-
+// it does delete but the request doesn't stop?? hmm
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try{
