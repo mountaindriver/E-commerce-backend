@@ -70,6 +70,7 @@ router.delete('/:id', async(req, res) => {
       });
       return
     }
+    res.status(200).json(tagData);
   } catch {
     res.status(5005).json(err);
   }
