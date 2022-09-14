@@ -39,11 +39,8 @@ router.post('/', async (req, res) => {
 });
 
 
-// *** not working ***
 router.put('/:id', async (req, res, next) => {
   // update a category by its `id` value
-  console.log(req.body)
-  console.log(req.params)
   try{
     const catData = await Category.update(
       {category_name: req.body.category_name},
@@ -55,8 +52,7 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-
-// it does delete but the request doesn't stop?? hmm
+// it does delete but the request doesn't stop (this and tag delete)
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try{
